@@ -36,7 +36,7 @@ app.get('/api/workouts', (req, res) => {
 });
 
 app.post('/api/workouts', (req, res) => {
- db.Workout.create({})
+ db.Workout.create({day: new Date().getTime()})
  .then((data) => {
     res.status(200).json(data)
  })
@@ -47,11 +47,13 @@ app.post('/api/workouts', (req, res) => {
 
 app.put("/api/workouts/:id",(req,res) => {
   console.log(req.body)
-  db.Workout.update({_id : req.params.id} , {$push:{exercises : req.body}})
+  db.Workout.update({_id : req.params.id} , {$push:{exercises : req.body},
+  $inc: {totalDuration: req.body.duration}})
   .then((data) => {
     res.status(200).json(data)
  })
  .catch(error => {
+   console.log(error)
    res.status(500).json({error})
  })
 });

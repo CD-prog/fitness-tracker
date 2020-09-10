@@ -9,13 +9,13 @@ const workoutsSchema = new Schema({
       weight: Number,
       reps: Number,
       sets: Number,
-    default: []
+      distance: Number
   }],
-  day: {
-    type: Date,
-    default: Date.now()
-  }
-});
+  day: Date,
+  totalDuration: Number
+},
+{ typeKey: '$type' }
+);
 
 const Workouts = mongoose.model("Workouts", workoutsSchema);
 
