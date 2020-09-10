@@ -8,6 +8,8 @@ https://shrouded-mountain-99949.herokuapp.com/ - Deployed Heroku App
 Application that allows user to view workout stats, create and track daily workouts
 JavaScript,NodeJs, MongoDB, MongoDB Atlas, Express, Heroku
 
+<img src="public/fitness-tracker.png">
+
 
 
 ## Table of Contents
