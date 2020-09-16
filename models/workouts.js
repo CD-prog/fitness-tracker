@@ -20,18 +20,3 @@ const workoutsSchema = new Schema({
 const Workouts = mongoose.model("Workouts", workoutsSchema);
 
 module.exports = Workouts;
-
-
-/**  {
-    day: new Date().setDate(new Date().getDate()-10),
-    exercises: [
-      {
-        type: "resistance",
-        name: "Bicep Curl",
-        duration: 20,
-        weight: 100,
-        reps: 10,
-        sets: 4
-      }
-    ]
-  }, */
